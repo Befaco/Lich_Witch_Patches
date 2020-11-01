@@ -1,2 +1,2 @@
 # Lich_Patches
-Patches for Lich Module
+Patches collection  for Lich Module
