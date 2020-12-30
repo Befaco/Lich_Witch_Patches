@@ -1,4 +1,4 @@
-#N canvas 226 513 1622 818 10;
+#N canvas 226 234 1622 818 10;
 #X obj 142 562 dac~;
 #X obj 142 128 adc~;
 #X text 299 100 POT A;
@@ -21,3 +21,7 @@
 #X obj 962 128 r Button_1 @owl B1;
 #X obj 1139 128 r Button_2 @owl B2;
 #X obj 624 128 r Pot_C @owl C;
+#X obj 1236 561 s BUTTON_A @owl B1;
+#X text 1252 589 BUTTON A LED;
+#X obj 1360 561 s BUTTON_B @owl B2;
+#X text 1376 589 BUTTON B LED;
