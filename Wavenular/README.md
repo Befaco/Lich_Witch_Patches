@@ -1,5 +1,5 @@
 # Wavenular Beta 1
-Patch by Death Whistle
+Patch by Death Whistle <br/>
 Dual wavetable oscillator based on audio input with vca, decay envelope and state variable filter.
 
 - Button_1: Create new WaveForm
