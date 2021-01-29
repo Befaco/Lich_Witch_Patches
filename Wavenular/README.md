@@ -1,6 +1,6 @@
 # Wavenular Beta 1
 Patch by Death Whistle <br/>
-Dual wavetable oscillator based on audio input with vca, decay envelope and state variable filter.
+Dual wavetable oscillator based on audio input with vca, decay envelope, state variable filter and midi implementation.
 
 - Button_1: Create new WaveForm
 - Button_2: Gate in 
@@ -9,15 +9,13 @@ Dual wavetable oscillator based on audio input with vca, decay envelope and stat
 - Pot_C: Decay envelope (5sec)
 - Pot_D: State variable filter (LP->HP)
 ....
-- Gate Out: Pass through of Gate in
+- Gate Out: Pass through of Gate in (Button_2 & Midi_Note_On)
 - CV_OUT_1: Frequecy Osc_1 (patch to cvB and sync the freq of the two osc)
-- CV_OUT_2: Implement the envelope of Pot_C
+- CV_OUT_2: Midi_Note
 	
 ToDo:
-- Implement Midi
 - Improve Frequency tracking
 - Improve Filters, add resonance
-- Implement Gate Out and 2 CV OUT (Maybe 1 for the envelope out)
 - Implement Several osc and wavetables to charge randomly if there is nothing in the input
 
 
