@@ -10,11 +10,12 @@ Dual wavetable oscillator based on audio input with vca, decay envelope, state v
 - Pot_D: State variable filter (LP->HP)
 ....
 - Gate Out: Pass through of Gate in (Button_2 & Midi_Note_On)
-- CV_OUT_1: Pass through of Pot_A Frequecy Osc_1
-- CV_OUT_2: Midi_Note
+- CV_OUT_1: Pass through of Pot_A
+- CV_OUT_2: Midi_Note_Freq
 	
 ToDo:
-- Improve Filters, add resonance
+- CV_OUT_2: Midi_Note_Freq to CV
+- Gate Out: Detect midi gate
 - Implement Several osc and wavetables to charge randomly if there is nothing in the input
 
 
