@@ -768,7 +768,7 @@
 #X connect 17 0 6 0;
 #X connect 18 0 3 0;
 #X restore 138 514 pd filter;
-#N canvas 1585 42 975 1222 Mixer 0;
+#N canvas 1585 42 975 1222 Mixer 1;
 #X obj 27 260 *~;
 #X obj 119 259 *~;
 #X obj 51 83 loadbang;
@@ -1095,11 +1095,13 @@
 #X connect 4 0 7 0;
 #X connect 4 0 60 0;
 #X connect 5 0 69 0;
+#X connect 5 0 28 2;
 #X connect 6 0 16 1;
 #X connect 7 0 55 0;
 #X connect 9 0 11 0;
 #X connect 9 0 20 0;
 #X connect 10 0 69 0;
+#X connect 10 0 28 2;
 #X connect 11 0 32 0;
 #X connect 12 0 16 3;
 #X connect 13 0 12 0;
