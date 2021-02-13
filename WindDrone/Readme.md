@@ -1,5 +1,5 @@
-# WindDrone Beta 1 <br/>
-Patch by Death Whistle 
+# WindDrone Beta 1 
+Patch by Death Whistle <br/>
 Stereo wind simulator
 
 - Pot_A: Frequency A
