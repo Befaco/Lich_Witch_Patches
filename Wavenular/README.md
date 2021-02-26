@@ -16,5 +16,3 @@ Dual oscillator based on audio input with decay envelope, state variable filter 
 ToDo:
 - CV_OUT_2: Midi_Note_Freq to CV
 - Gate Out: Detect midi gate
-- Implement several waveforms if there is nothing in the input. Already tried it with the attached waveforms.pd but the lich memory overloads even with only 2 waveforms. (for now if the input signal is not strong enough the button_1 does nothing) 
-
