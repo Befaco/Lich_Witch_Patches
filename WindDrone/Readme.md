@@ -13,6 +13,4 @@ Stereo wind simulator
 - CV_OUT_1: ____
 - CV_OUT_2: ____
 
-ToDo:
-- Buttons 1&2 toogle leds. 
 
