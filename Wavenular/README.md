@@ -10,9 +10,7 @@ Dual oscillator based on audio input with decay envelope, state variable filter 
 - Pot_D: State variable filter (LP->HP)
 ....
 - Gate Out: Pass through of Gate in
-- CV_OUT_1: Pass through of Pot_A
-- CV_OUT_2: Midi_Note_Freq
-	
-ToDo:
-- CV_OUT_2: Midi_Note_Freq to CV
-- Gate Out: Detect midi gate
+- CV_OUT_1: Pass through of Pot_A Freq
+- CV_OUT_2: Pass through of Pot_B Freq
+
+
