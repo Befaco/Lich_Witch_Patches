@@ -9,8 +9,9 @@ Stereo wind simulator
 - Button_1: Crusher
 - Button_2: Ring Modulation <br/>
 .........
+
 - Gate Out: ____
-- CV_OUT_1: Step Envelope follower
-- CV_OUT_2: Slew Envelope follower
+- CV_OUT_1: ____
+- CV_OUT_2: ____
 
 
