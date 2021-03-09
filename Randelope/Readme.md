@@ -5,7 +5,7 @@ Dual sample&hold with slew control and synced to a external or internal clock an
 
 - Pot_A: Frequency random_1
 - Pot_B: Slew time random_1
-- Pot_C: gate burst probability
+- Pot_C: gate burst probability and attenuator for the Frequency random_2
 - Pot_D: Attenuator for the Frequency random_1
 - Button_1: TapTempo for internal clock (or gate1 input for external clock)
 - Button_2: freeze the randomVoltages <br/>
