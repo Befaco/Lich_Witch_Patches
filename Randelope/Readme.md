@@ -8,7 +8,7 @@ Dual sample&hold with slew control and synced to a external or internal clock an
 - Pot_C: gate burst probability
 - Pot_D: Attenuator for the Frequency random_1
 - Button_1: TapTempo for internal clock (or gate1 input for external clock)
-- Button_2: freeze the randomVoltages
+- Button_2: freeze the randomVoltages <br/>
 .........
 - Gate Out: Burst Gate
 - CV_OUT_1: random Voltage_1
