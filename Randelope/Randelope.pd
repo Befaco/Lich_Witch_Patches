@@ -104,7 +104,7 @@
 #X obj 583 71 loadbang;
 #X floatatom 473 339 5 0 0 0 - - -;
 #X obj 487 593 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5842 1;
+-1 -1 0 1;
 #X floatatom 504 172 5 0 0 0 - - -;
 #X obj 460 215 +;
 #X obj 460 271 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -181,14 +181,14 @@
 #X connect 6 0 0 0;
 #X restore 1502 120 pd invertSlider;
 #X obj 1508 154 s burstDensity;
-#X obj 60 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 60 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 533 701 CV OUT 1;
 #X obj 482 671 s CV_OUT_1 @owl F;
 #X obj 1170 394 random 10;
 #X obj 1174 485 moses 10;
 #X obj 1691 145 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X floatatom 611 512 5 0 0 0 - - -;
 #X obj 1671 97 r Pot_D @owl D;
 #X text 1698 69 POT D;
@@ -197,27 +197,31 @@
 #X obj 1660 270 s attenuator;
 #X obj 548 276 r attenuator;
 #X obj 461 314 random \$1;
-#X obj 1494 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1489 400 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;
-#X obj 1498 354 r burstClock;
+#X obj 1483 354 r burstClock;
 #X floatatom 1508 473 5 0 0 0 - - -;
 #X obj 1522 727 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 127 1;
+-1 -1 8255 1;
 #X obj 1501 511 / 100;
 #X floatatom 1536 566 5 0 0 0 - - -;
 #X obj 1518 687 line;
 #X floatatom 1549 751 5 0 0 0 - - -;
 #X obj 1521 646 pack f \$2;
-#X obj 1496 448 random \$1;
 #X obj 1491 426 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1332 123 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1800 1;
+-1 -1 0 1;
 #X obj 1301 146 * 100;
 #X obj 1301 170 s attenuator2;
 #X obj 1555 411 r attenuator2;
-#X text 1540 837 CV OUT 2;
-#X obj 1508 807 s CV_OUT_2 @owl G;
+#X obj 1522 86 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 1600 590 loadbang;
+#X msg 1602 616 0;
+#X text 1500 850 CV OUT 2;
+#X obj 1468 820 s CV_OUT_2 @owl G;
+#X obj 1496 448 random 100;
 #X connect 0 0 4 0;
 #X connect 0 1 55 0;
 #X connect 0 1 64 0;
@@ -265,7 +269,6 @@
 #X connect 56 0 67 0;
 #X connect 58 0 13 0;
 #X connect 60 0 62 0;
-#X connect 60 0 90 0;
 #X connect 61 0 47 0;
 #X connect 62 0 63 0;
 #X connect 64 0 11 0;
@@ -279,17 +282,19 @@
 #X connect 76 0 77 1;
 #X connect 77 0 20 0;
 #X connect 77 0 29 0;
-#X connect 78 0 88 0;
+#X connect 78 0 87 0;
 #X connect 79 0 78 0;
 #X connect 81 0 85 0;
-#X connect 81 0 94 0;
+#X connect 81 0 96 0;
 #X connect 82 0 83 0;
 #X connect 82 0 86 0;
 #X connect 84 0 81 0;
 #X connect 86 0 84 0;
-#X connect 87 0 80 0;
-#X connect 87 0 82 0;
-#X connect 88 0 87 0;
+#X connect 87 0 97 0;
+#X connect 88 0 89 0;
 #X connect 89 0 90 0;
-#X connect 90 0 91 0;
-#X connect 92 0 87 1;
+#X connect 92 0 62 0;
+#X connect 93 0 94 0;
+#X connect 94 0 86 1;
+#X connect 97 0 80 0;
+#X connect 97 0 82 0;
