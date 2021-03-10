@@ -5,14 +5,14 @@ Dual sample&hold with slew control and synced to a external or internal clock an
 
 - Pot_A: Frequency random_1
 - Pot_B: Slew time random_1
-- Pot_C: gate burst probability and attenuator for the Frequency random_2 (Maybe is a little confusing this attenuator?)
+- Pot_C: gate burst probability 
 - Pot_D: Attenuator for the Frequency random_1
 - Button_1: TapTempo for internal clock (or gate1 input for external clock)
 - Button_2: freeze the randomVoltages <br/>
 .........
 - Gate Out: Burst Gate
 - CV_OUT_1: random Voltage_1
-- CV_OUT_2: random Voltage_2
+- CV_OUT_2: random Voltage_2 in sync with the gate burst
 
 Todo:
 - Create an envelope follower for the audio inputs?
