@@ -3,7 +3,7 @@
 -1 -1;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array stepSeq_01 8 float 3;
-#A 0 1 0 1 1 1 0 1 0;
+#A 0 0 0 0 0 1 0 1 0;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 403 422 graph;
 #N canvas 775 527 1785 807 tapTempo 0;
@@ -96,7 +96,6 @@
 #X obj 740 392 outlet;
 #X obj 300 401 s ticklength16;
 #X obj 627 362 r swing;
-#X obj 714 65 r randTrig;
 #N canvas 602 394 1654 1024 gateToTrigger 0;
 #X obj 57 70 sel 1;
 #X obj 57 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -122,6 +121,7 @@
 #X connect 9 0 6 0;
 #X restore 715 99 pd gateToTrigger;
 #X floatatom 746 123 5 0 0 0 - - -;
+#X obj 714 65 r rand;
 #X connect 0 0 2 0;
 #X connect 0 1 4 0;
 #X connect 1 0 11 0;
@@ -174,8 +174,7 @@
 #X connect 49 0 44 1;
 #X connect 49 0 43 0;
 #X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 51 0 14 0;
+#X connect 52 0 50 0;
 #X restore 65 192 pd tapTempo;
 #X obj 63 71 r Button_1 @owl B1;
 #X text 87 47 BUT 1_ CLOCK;
@@ -183,7 +182,7 @@
 -1 -1;
 #X obj 65 249 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 66 280 s clock;
+#X obj 60 287 s clock;
 #X obj 140 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 141 247 s multi4Clock;
@@ -376,31 +375,33 @@
 -1;
 #X obj 31 172 % 8;
 #X msg 78 75 0;
-#X obj 28 266 s rand;
 #X obj 31 38 r clock;
 #X obj 28 208 sel 0;
 #X obj 140 205 outlet;
+#X floatatom 106 247 5 0 0 0 - - -;
+#X obj 28 266 s rand;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
-#X connect 0 0 8 0;
+#X connect 0 0 7 0;
 #X connect 1 0 0 1;
-#X connect 2 0 5 0;
-#X connect 3 0 7 0;
+#X connect 2 0 9 0;
+#X connect 3 0 6 0;
+#X connect 3 0 8 0;
 #X connect 4 0 0 1;
-#X connect 6 0 0 0;
-#X connect 7 0 2 0;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
 #X restore 232 77 pd trigSeq;
 #X obj 877 705 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array stepSeq_02 8 float 3;
-#A 0 1 0 0 0 0 1 1 1;
+#A 0 1 1 0 1 1 1 0 0;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 907 423 graph;
 #X floatatom 1055 813 5 0 0 0 - - -;
 #X obj 1054 854 sel 1;
 #X obj 1158 698 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 1155 728 int;
 #X obj 1055 921 s~ audioNoiseB;
 #N canvas 1358 621 965 696 oscHigh 0;
@@ -476,11 +477,11 @@
 -1;
 #N canvas 1400 572 680 594 switch 0;
 #X obj 114 257 spigot;
-#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 276 41 loadbang;
 #X obj 186 256 spigot;
-#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 255 122 !=;
 #X msg 273 79 1;
@@ -497,7 +498,7 @@
 #X connect 8 0 0 0;
 #X connect 9 0 4 0;
 #X restore 55 236 pd switch;
-#X obj 111 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 111 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 102 139 r muteB;
 #X msg 112 63 0;
@@ -562,13 +563,13 @@
 -1 -1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array stepSeq_03 8 float 3;
-#A 0 1 1 1 1 0 1 1 1;
+#A 0 1 1 1 0 0 1 1 1;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 1524 408 graph;
 #X floatatom 1701 791 5 0 0 0 - - -;
 #X obj 1679 833 sel 1;
 #X obj 1833 700 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 1830 730 int;
 #X obj 1464 670 r randTrig;
 #X obj 1681 895 s~ audioNoiseC;
@@ -645,11 +646,11 @@
 #X msg 290 69 10.5;
 #N canvas 1400 572 680 594 switch 0;
 #X obj 114 257 spigot;
-#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 276 41 loadbang;
 #X obj 186 256 spigot;
-#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 255 122 !=;
 #X msg 273 79 1;
@@ -666,7 +667,7 @@
 #X connect 8 0 0 0;
 #X connect 9 0 4 0;
 #X restore 68 197 pd switch;
-#X obj 123 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 123 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 103 93 r muteC;
 #X msg 112 63 0;
@@ -743,7 +744,7 @@
 #X obj 1866 119 r seq3;
 #X obj 72 372 s BUTTON_A @owl B1;
 #X text 88 400 BUTTON A LED;
-#X obj 73 342 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 73 342 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 1190 626 loadbang;
 #X obj 1877 615 loadbang;
@@ -806,11 +807,11 @@
 #X obj 723 250 s length_01;
 #X obj 675 634 r length_01;
 #X obj 919 134 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 915 186 int;
 #X obj 915 251 s length_02;
 #X obj 1096 130 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 1092 182 int;
 #X obj 1092 247 s length_03;
 #X obj 1254 667 r length_02;
@@ -1002,7 +1003,6 @@
 #X restore 1915 776 pd muteInZero;
 #X obj 1912 804 s muteC;
 #X obj 838 45 loadbang;
-#X msg 854 88 8;
 #X obj 1298 129 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X text 1299 62 POT D;
@@ -1010,6 +1010,7 @@
 #X obj 1295 149 * 0.33;
 #X floatatom 1306 185 5 0 0 0 - - -;
 #X obj 1280 245 s swing;
+#X msg 854 88 0;
 #X connect 0 0 72 0;
 #X connect 2 0 9 0;
 #X connect 2 0 69 0;
@@ -1135,11 +1136,11 @@
 #X connect 140 0 108 0;
 #X connect 141 0 111 0;
 #X connect 142 0 143 0;
-#X connect 144 0 145 0;
-#X connect 145 0 103 0;
-#X connect 145 0 107 0;
-#X connect 145 0 110 0;
-#X connect 146 0 149 0;
-#X connect 148 0 146 0;
-#X connect 149 0 150 0;
-#X connect 149 0 151 0;
+#X connect 144 0 151 0;
+#X connect 145 0 148 0;
+#X connect 147 0 145 0;
+#X connect 148 0 149 0;
+#X connect 148 0 150 0;
+#X connect 151 0 103 0;
+#X connect 151 0 107 0;
+#X connect 151 0 110 0;
