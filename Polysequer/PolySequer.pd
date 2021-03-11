@@ -1,9 +1,9 @@
-#N canvas 510 226 2560 1395 12;
+#N canvas 0 23 2560 1395 12;
 #X obj 310 719 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array stepSeq_01 8 float 3;
-#A 0 1 0 0 1 0 0 0 0;
+#A 0 1 0 1 1 1 0 1 0;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 403 422 graph;
 #N canvas 775 527 1785 807 tapTempo 0;
@@ -96,6 +96,32 @@
 #X obj 740 392 outlet;
 #X obj 300 401 s ticklength16;
 #X obj 627 362 r swing;
+#X obj 714 65 r randTrig;
+#N canvas 602 394 1654 1024 gateToTrigger 0;
+#X obj 57 70 sel 1;
+#X obj 57 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 84 246 + 1;
+#X obj 46 246 i;
+#X obj 53 138 t b b;
+#X floatatom 45 276 5 0 0 0 - - -;
+#X msg 101 206 0;
+#X obj 59 44 inlet;
+#X obj 41 315 outlet;
+#X obj 98 172 delay 10;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 1;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 4 1 9 0;
+#X connect 5 0 8 0;
+#X connect 6 0 3 0;
+#X connect 7 0 0 0;
+#X connect 9 0 6 0;
+#X restore 715 99 pd gateToTrigger;
+#X floatatom 746 123 5 0 0 0 - - -;
 #X connect 0 0 2 0;
 #X connect 0 1 4 0;
 #X connect 1 0 11 0;
@@ -147,6 +173,9 @@
 #X connect 45 0 44 0;
 #X connect 49 0 44 1;
 #X connect 49 0 43 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 51 0 14 0;
 #X restore 65 192 pd tapTempo;
 #X obj 63 71 r Button_1 @owl B1;
 #X text 87 47 BUT 1_ CLOCK;
@@ -155,7 +184,7 @@
 #X obj 65 249 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 66 280 s clock;
-#X obj 140 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 140 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 141 247 s multi4Clock;
 #X floatatom 503 814 5 0 0 0 - - -;
@@ -188,7 +217,7 @@
 #X obj 2342 155 r~ audioNoiseC;
 #X obj 2232 156 r~ audioNoiseB;
 #X obj 2110 154 r~ audioNoiseA;
-#N canvas 1595 721 965 697 oscLow 1;
+#N canvas 1595 721 965 697 oscLow 0;
 #N canvas 1516 689 831 675 vca_env 0;
 #N canvas 1457 716 450 300 vline 0;
 #X obj 37 17 inlet;
@@ -365,17 +394,17 @@
 -1 -1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array stepSeq_02 8 float 3;
-#A 0 0 0 0 0 0 1 0 1;
+#A 0 1 0 0 0 0 1 1 1;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 907 423 graph;
 #X floatatom 1055 813 5 0 0 0 - - -;
 #X obj 1054 854 sel 1;
 #X obj 1158 698 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4762 1;
+-1 -1 12700 1;
 #X obj 1155 728 int;
 #X obj 1055 921 s~ audioNoiseB;
-#N canvas 1358 621 965 696 oscHigh 1;
-#N canvas 1516 690 831 675 vca_env 1;
+#N canvas 1358 621 965 696 oscHigh 0;
+#N canvas 1516 690 831 675 vca_env 0;
 #N canvas 1457 716 450 300 vline 0;
 #X obj 37 17 inlet;
 #X obj 94 121 unpack f f f;
@@ -533,13 +562,13 @@
 -1 -1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array stepSeq_03 8 float 3;
-#A 0 1 0 0 0 1 0 1 1;
+#A 0 1 1 1 1 0 1 1 1;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 1524 408 graph;
 #X floatatom 1701 791 5 0 0 0 - - -;
 #X obj 1679 833 sel 1;
 #X obj 1833 700 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4762 1;
+-1 -1 12700 1;
 #X obj 1830 730 int;
 #X obj 1464 670 r randTrig;
 #X obj 1681 895 s~ audioNoiseC;
@@ -777,11 +806,11 @@
 #X obj 723 250 s length_01;
 #X obj 675 634 r length_01;
 #X obj 919 134 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5000 1;
+-1 -1 12700 1;
 #X obj 915 186 int;
 #X obj 915 251 s length_02;
 #X obj 1096 130 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5900 1;
+-1 -1 12700 1;
 #X obj 1092 182 int;
 #X obj 1092 247 s length_03;
 #X obj 1254 667 r length_02;
