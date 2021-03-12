@@ -1,6 +1,6 @@
 # Randelope Beta 1
 Patch by Death Whistle <br/>
-Dual sample&hold with slew control and synced to a external or internal clock and burst generator also synced <br/>
+Dual step lfo with attenuation and slew control and synced to an external or internal clock and burst generator <br/>
 
 
 - Pot_A: Frequency random_1
