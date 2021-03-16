@@ -159,7 +159,7 @@
 #X obj 139 200 s multi4Clock;
 #X obj 1116 323 r multi4Clock;
 #X obj 1171 548 s burstClock;
-#X obj 197 288 r burstClock;
+#X obj 206 242 r burstClock;
 #X text 1331 56 POT C;
 #X obj 1304 84 r Pot_C @owl C;
 #X obj 1308 311 r burstDensity;
@@ -179,7 +179,7 @@
 #X connect 6 0 0 0;
 #X restore 1502 120 pd invertSlider;
 #X obj 1508 154 s burstDensity;
-#X obj 60 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 60 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 533 701 CV OUT 1;
 #X obj 482 671 s CV_OUT_1 @owl F;
@@ -196,11 +196,11 @@
 #X obj 548 276 r attenuator;
 #X obj 461 314 random \$1;
 #X obj 1489 400 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1483 354 r burstClock;
 #X floatatom 1508 473 5 0 0 0 - - -;
 #X obj 1522 727 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8890 1;
+-1 -1 4953 1;
 #X obj 1501 511 / 100;
 #X floatatom 1536 566 5 0 0 0 - - -;
 #X obj 1518 687 line;
@@ -222,7 +222,7 @@
 #X obj 1496 448 random 100;
 #X obj 203 477 r clock;
 #X obj 108 463 adc~;
-#N canvas 602 417 1654 1024 gateToTrigger 0;
+#N canvas 664 394 1654 1024 gateToTrigger 0;
 #X obj 57 70 sel 1;
 #X obj 57 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -231,23 +231,23 @@
 #X obj 53 138 t b b;
 #X floatatom 45 276 5 0 0 0 - - -;
 #X msg 101 206 0;
-#X obj 98 172 delay 100;
 #X obj 59 44 inlet;
 #X obj 41 315 outlet;
+#X obj 98 172 delay 50;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 1;
 #X connect 3 0 2 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
-#X connect 4 1 7 0;
-#X connect 5 0 9 0;
+#X connect 4 1 9 0;
+#X connect 5 0 8 0;
 #X connect 6 0 3 0;
-#X connect 7 0 6 0;
-#X connect 8 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 6 0;
 #X restore 271 313 pd gateToTrigger;
 #X floatatom 302 337 5 0 0 0 - - -;
-#N canvas 1010 529 769 745 sample&hold 1;
+#N canvas 1010 529 769 745 sample&hold 0;
 #X obj 71 151 t b b;
 #X obj 68 286 snapshot~;
 #X obj 153 206 f 0;
@@ -260,7 +260,7 @@
 #X obj 69 115 metro 1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array array1 1 float 3;
-#A 0 2.39306e-05;
+#A 0 0;
 #X coords 0 1 1 -1 200 140 1;
 #X restore 210 50 graph;
 #X obj 129 535 clip~ -1 1;
@@ -297,6 +297,7 @@
 #X connect 20 0 3 0;
 #X restore 108 515 pd sample&hold;
 #X obj 131 567 dac~ 1 2;
+#X msg 241 286 1;
 #X connect 0 0 4 0;
 #X connect 0 1 54 0;
 #X connect 0 1 63 0;
@@ -341,7 +342,7 @@
 #X connect 52 0 56 0;
 #X connect 53 0 46 0;
 #X connect 55 0 66 0;
-#X connect 57 0 99 0;
+#X connect 57 0 103 0;
 #X connect 59 0 61 0;
 #X connect 60 0 46 0;
 #X connect 61 0 62 0;
@@ -378,3 +379,4 @@
 #X connect 99 0 9 0;
 #X connect 101 0 102 0;
 #X connect 101 1 102 1;
+#X connect 103 0 99 0;
