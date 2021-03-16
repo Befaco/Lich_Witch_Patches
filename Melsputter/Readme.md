@@ -15,5 +15,5 @@ Dual melody sputter synced to an external clock and quantized to several scales.
 - CV_OUT_2: HighRandomLFO (Based on Pot_B probability)
 
 ToDo:
-- Decide scales
+- Improve internal synth (Add midi control)
 
