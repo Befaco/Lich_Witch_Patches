@@ -10,8 +10,8 @@ Stereo wind simulator
 - Button_2: Ring Modulation <br/>
 .........
 
-- Gate Out: ____
-- CV_OUT_1: ____
-- CV_OUT_2: ____
+- Gate Out: Random Gates based in Frequency C
+- CV_OUT_1: Random Voltage based in Frequency A
+- CV_OUT_2: Random Voltage based in Frequency B
 
 
