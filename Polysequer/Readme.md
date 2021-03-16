@@ -16,4 +16,4 @@ The sequencer generates a random sequence each 8 steps but you can freeze the la
 - CV_OUT_2: trigger out sequence_C
 
 Todo:
-- Improve the internal synth
+- - Improve the internal synth (add midi control)
