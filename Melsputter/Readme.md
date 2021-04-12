@@ -8,12 +8,11 @@ Dual melody sputter synced to an external clock and quantized to several scales.
 - Pot_A: Probability bass
 - Pot_B: Probability lead
 - Pot_C: Select Scale
-- Pot_D: Low Pass Filter
+- Pot_D: Low Pass Filter <br>
 ....
 - Gate Out: Pass through of Gate in (clock)
 - CV_OUT_1: LowRandomLFO (Based on Pot_A probability)
-- CV_OUT_2: HighRandomLFO (Based on Pot_B probability)
-
-ToDo:
-- Improve the internal synth (Add midi control)
+- CV_OUT_2: HighRandomLFO (Based on Pot_B probability) <br>
+....
+- Midi Control. Midi chart inside pd patch
 
