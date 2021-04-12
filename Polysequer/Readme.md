@@ -13,7 +13,7 @@ The sequencer generates a random sequence each 8 steps but you can freeze the la
 .........
 - Gate Out: trigger out sequence_A
 - CV_OUT_1: trigger out sequence_B
-- CV_OUT_2: trigger out sequence_C
+- CV_OUT_2: trigger out sequence_C <br/>
+.........
+- Midi Control. Midi chart inside pd patch
 
-Todo:
-- - Improve the internal synth (add midi control)
