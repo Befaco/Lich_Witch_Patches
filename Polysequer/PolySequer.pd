@@ -3,7 +3,7 @@
 -1 -1;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array stepSeq_01 8 float 3;
-#A 0 1 0 0 1 0 1 1 1;
+#A 0 0 1 1 1 0 1 0 1;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 403 422 graph;
 #N canvas 775 527 1785 807 tapTempo 0;
@@ -287,11 +287,11 @@
 #X msg 279 236 11.25;
 #N canvas 1400 572 680 594 switch 0;
 #X obj 114 257 spigot;
-#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 276 41 loadbang;
 #X obj 186 256 spigot;
-#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 255 122 !=;
 #X msg 273 79 1;
@@ -308,7 +308,7 @@
 #X connect 8 0 0 0;
 #X connect 9 0 4 0;
 #X restore 54 373 pd switch;
-#X obj 109 333 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 109 333 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 88 243 r muteA;
 #X msg 110 200 0;
@@ -430,16 +430,16 @@
 -1 -1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array stepSeq_02 8 float 3;
-#A 0 1 0 0 1 1 1 0 0;
+#A 0 0 1 0 1 0 0 0 0;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 907 423 graph;
 #X floatatom 1055 813 5 0 0 0 - - -;
 #X obj 1054 854 sel 1;
 #X obj 1158 698 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6350 1;
 #X obj 1155 728 int;
 #X obj 1056 958 s~ audioNoiseB;
-#N canvas 1358 621 965 696 oscHigh 0;
+#N canvas 1358 621 965 696 oscHigh 1;
 #N canvas 1515 690 831 675 vca_env 0;
 #N canvas 1457 716 450 300 vline 0;
 #X obj 37 17 inlet;
@@ -512,11 +512,11 @@
 -1;
 #N canvas 1400 572 680 594 switch 0;
 #X obj 114 257 spigot;
-#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 156 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 276 41 loadbang;
 #X obj 186 256 spigot;
-#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 225 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 255 122 !=;
 #X msg 273 79 1;
@@ -533,7 +533,7 @@
 #X connect 8 0 0 0;
 #X connect 9 0 4 0;
 #X restore 55 236 pd switch;
-#X obj 111 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 111 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 102 139 r muteB;
 #X msg 112 63 0;
@@ -588,8 +588,6 @@
 #X obj 67 470 outlet~;
 #X obj 136 225 loadbang;
 #X msg 131 291 0;
-#X obj 177 20 loadbang;
-#X msg 177 44 7500;
 #X obj 50 149 osc~;
 #X obj 27 22 r pitch_02;
 #X floatatom 180 103 5 0 0 0 - - -;
@@ -605,26 +603,24 @@
 #X obj 298 137 ctlin 113;
 #X connect 0 0 1 1;
 #X connect 1 0 2 0;
-#X connect 2 0 15 0;
+#X connect 2 0 13 0;
 #X connect 3 0 0 0;
-#X connect 5 0 13 0;
+#X connect 5 0 11 0;
 #X connect 6 0 2 1;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 10 0;
 #X connect 10 0 12 0;
-#X connect 12 0 14 0;
-#X connect 13 0 2 1;
-#X connect 14 0 9 0;
-#X connect 14 0 11 0;
-#X connect 15 0 4 0;
-#X connect 16 0 17 0;
-#X connect 17 0 15 1;
-#X connect 18 0 15 1;
-#X connect 19 0 20 0;
-#X connect 20 0 18 0;
-#X connect 21 0 19 0;
-#X connect 21 1 19 1;
+#X connect 11 0 2 1;
+#X connect 12 0 7 0;
+#X connect 12 0 9 0;
+#X connect 13 0 4 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X connect 16 0 13 1;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 17 0;
+#X connect 19 1 17 1;
 #X restore 1056 925 pd oscHigh;
 #X obj 557 263 s randTrig;
 #X obj 310 686 r randTrig;
@@ -635,7 +631,7 @@
 -1 -1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array stepSeq_03 8 float 3;
-#A 0 0 1 1 1 0 1 0 1;
+#A 0 0 0 1 1 0 1 0 0;
 #X coords 0 2 8 0 200 140 1 0 0;
 #X restore 1524 408 graph;
 #X floatatom 1701 791 5 0 0 0 - - -;
@@ -901,7 +897,7 @@
 #X obj 1722 139 r seq2;
 #X obj 1866 119 r seq3;
 #X text 88 400 BUTTON A LED;
-#X obj 73 342 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 73 342 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 1190 626 loadbang;
 #X obj 1877 615 loadbang;
@@ -959,12 +955,12 @@
 #X obj 144 101 loadbang;
 #X msg 147 131 0;
 #X obj 703 133 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 0;
+-1 -1 5700 0;
 #X obj 723 184 int;
 #X obj 723 250 s length_01;
 #X obj 675 634 r length_01;
 #X obj 919 134 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6400 1;
 #X obj 915 186 int;
 #X obj 915 251 s length_02;
 #X obj 1096 130 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
@@ -1091,7 +1087,7 @@
 #X restore 678 770 pd muteInZero;
 #X obj 677 798 s muteA;
 #X obj 631 678 hsl 128 15 0 8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 4762 1;
 #N canvas 913 593 1032 727 muteInZero 0;
 #X obj 44 94 moses;
 #X obj 126 28 loadbang;
@@ -1164,7 +1160,7 @@
 #X floatatom 1306 185 5 0 0 0 - - -;
 #X obj 1280 245 s swing;
 #X msg 854 88 0;
-#N canvas 0 23 1101 797 midiControlOSC1 0;
+#N canvas 1247 602 1101 797 midiControlOSC1 0;
 #X obj 139 238 s attack_01;
 #X obj 389 150 / 127;
 #X obj 763 160 / 127;
@@ -1270,6 +1266,8 @@
 #X restore 942 113 pd RandomPitch;
 #X obj 514 39 r triggerOSC1;
 #X obj 943 68 r triggerOSC1;
+#X obj 804 192 loadbang;
+#X msg 802 220 7500;
 #X connect 1 0 25 1;
 #X connect 2 0 22 1;
 #X connect 5 0 6 0;
@@ -1299,8 +1297,10 @@
 #X connect 26 0 21 0;
 #X connect 27 0 23 0;
 #X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 4 0;
 #X restore 395 984 pd midiControlOSC1;
-#N canvas 0 23 1272 734 midiControlOSC2 0;
+#N canvas 508 265 1272 734 midiControlOSC2 1;
 #X obj 118 276 s attack_02;
 #X obj 314 352 s decay_02;
 #X obj 729 365 s pitch_02;
@@ -1403,6 +1403,8 @@
 #X connect 17 1 14 1;
 #X connect 18 0 7 1;
 #X restore 840 221 pd RandomPitch;
+#X obj 734 90 loadbang;
+#X msg 732 117 127;
 #X connect 3 0 0 0;
 #X connect 4 0 24 1;
 #X connect 5 0 19 1;
@@ -1429,6 +1431,8 @@
 #X connect 23 0 24 0;
 #X connect 24 0 1 0;
 #X connect 25 0 18 0;
+#X connect 26 0 27 0;
+#X connect 27 0 14 0;
 #X restore 906 988 pd midiControlOSC2;
 #N canvas 0 23 1145 649 midiControlOSC3 0;
 #X obj 158 210 s attack_03;
@@ -1497,7 +1501,7 @@
 #X obj 373 249 t f;
 #X obj 386 280 +;
 #N canvas 479 547 770 840 RandomFilter 0;
-#X obj 21 37 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 21 37 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X floatatom 37 285 5 0 0 0 - - -;
 #X obj 34 522 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
@@ -1542,6 +1546,9 @@
 #X obj 784 185 t f;
 #X obj 784 209 +;
 #X obj 788 83 r clock;
+#X obj 755 32 loadbang;
+#X floatatom 792 238 5 0 0 0 - - -;
+#X msg 753 60 127;
 #X connect 3 0 0 0;
 #X connect 4 0 21 0;
 #X connect 5 0 26 1;
@@ -1569,28 +1576,33 @@
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
 #X connect 26 0 2 0;
+#X connect 26 0 29 0;
 #X connect 27 0 24 0;
+#X connect 28 0 30 0;
+#X connect 30 0 14 0;
 #X restore 1568 992 pd midiControlOSC3;
 #X obj 1741 838 s triggerOSC3;
 #X obj 1098 886 s triggerOSC2;
 #X obj 606 890 s triggerOSC1;
-#X text 375 1026 NANOKONTROL OSC1 KNOB 1 (CC 101) Attack OSC1 KNOB
-2 (CC 102) Decay OSC1 KNOB 3 (CC 103) PITCH OSC1 FADER 1 (CC 110) Volume
-OSC1 FADER 2 (CC 111) RndDecay OSC1 FADER 3 (CC 112) RndPitch;
-#X text 913 1041 NANOKONTROL OSC2 KNOB 1 (CC 104) Attack OSC2 KNOB
-2 (CC 105) Decay OSC2 KNOB 3 (CC 106) PITCH OSC2 FADER 1 (CC 113) Volume
-OSC2 FADER 2 (CC 114) RndDecay OSC2 FADER 3 (CC 115) RndPitch;
-#X text 1544 1028 NANOKONTROL OSC3 KNOB 1 (CC 107) Attack OSC3 KNOB
-2 (CC 108) Decay OSC3 KNOB 3 (CC 109) Filter OSC3 FADER 1 (CC 116)
-Volume OSC3 FADER 2 (CC 117) RndDecay OSC3 FADER 3 (CC 118) RndFilter
-;
-#X obj 727 89 r KickProb @owl A;
-#X obj 921 92 r NoiseAProb @owl B;
-#X obj 1092 89 r NoiseBProb @owl C;
 #X obj 1271 86 r Swing @owl D;
 #X obj 63 71 r TapClock @owl B1;
 #X obj 71 372 s ClockLed @owl B1;
 #X obj 517 87 r FreezeSeq @owl B2;
+#X obj 726 89 r OSC1Prob @owl A;
+#X obj 921 92 r OSC2Prob @owl B;
+#X obj 1092 89 r OSC3Prob @owl C;
+#X text 374 1025 NANOKONTROL. OSC1 KNOB 1 (CC 101) Attack. OSC1 KNOB
+2 (CC 102) Decay . OSC1 KNOB 3 (CC 103) PITCH. OSC1 FADER 1 (CC 110)
+Volume. OSC1 FADER 2 (CC 111) RndDecay. OSC1 FADER 3 (CC 112) RndPitch
+;
+#X text 913 1041 NANOKONTROL. OSC2 KNOB 1 (CC 104) Attack. OSC2 KNOB
+2 (CC 105) Decay. OSC2 KNOB 3 (CC 106) PITCH. OSC2 FADER 1 (CC 113)
+Volume. OSC2 FADER 2 (CC 114) RndDecay. OSC2 FADER 3 (CC 115) RndPitch
+;
+#X text 1544 1027 NANOKONTROL. OSC3 KNOB 1 (CC 107) Attack. OSC3 KNOB
+2 (CC 108) Decay. OSC3 KNOB 3 (CC 109) Filter. OSC3 FADER 1 (CC 116)
+Volume. OSC3 FADER 2 (CC 117) RndDecay. OSC3 FADER 3 (CC 118) RndFilter
+;
 #X connect 0 0 69 0;
 #X connect 2 0 8 0;
 #X connect 2 0 66 0;
@@ -1645,7 +1657,7 @@ Volume OSC3 FADER 2 (CC 117) RndDecay OSC3 FADER 3 (CC 118) RndFilter
 #X connect 62 0 115 0;
 #X connect 63 0 117 0;
 #X connect 64 0 119 0;
-#X connect 66 0 159 0;
+#X connect 66 0 153 0;
 #X connect 67 0 126 0;
 #X connect 68 0 127 0;
 #X connect 69 0 123 0;
@@ -1721,9 +1733,9 @@ Volume OSC3 FADER 2 (CC 117) RndDecay OSC3 FADER 3 (CC 118) RndFilter
 #X connect 144 0 100 0;
 #X connect 144 0 104 0;
 #X connect 144 0 107 0;
-#X connect 154 0 100 0;
-#X connect 155 0 104 0;
-#X connect 156 0 107 0;
-#X connect 157 0 139 0;
-#X connect 158 0 2 0;
-#X connect 160 0 11 0;
+#X connect 151 0 139 0;
+#X connect 152 0 2 0;
+#X connect 154 0 11 0;
+#X connect 155 0 100 0;
+#X connect 156 0 104 0;
+#X connect 157 0 107 0;
