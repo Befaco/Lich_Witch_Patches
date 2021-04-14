@@ -8,7 +8,7 @@ The sequencer generates a random sequence each 8 steps but you can freeze the la
 - Pot_B: Lenght Sequence_B (at 0 no triggers out)
 - Pot_C: Lenght Sequence_C (at 0 no triggers out) 
 - Pot_D: Swing control
-- Button_1: TapTempo for internal clock (or gate1 input for external clock)
+- Button_1: Gate1 input for external clock
 - Button_2: freeze the last 8 steps <br/>
 .........
 - Gate Out: trigger out sequence_A
