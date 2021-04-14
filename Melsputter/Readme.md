@@ -3,7 +3,7 @@
 Patch by Death Whistle <br/>
 Dual melody sputter synced to an external clock and quantized to several scales.
 
-- Button_1: Clock in / tap Tempo
+- Button_1: Clock in
 - Button_2: Stop the Clock (Momentary)
 - Pot_A: Probability bass
 - Pot_B: Probability lead
