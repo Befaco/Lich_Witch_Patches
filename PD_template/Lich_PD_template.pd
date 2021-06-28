@@ -1,27 +1,150 @@
-#N canvas 226 234 1622 818 10;
-#X obj 142 562 dac~;
-#X obj 142 128 adc~;
-#X text 299 100 POT A;
-#X text 476 100 POT B;
-#X text 651 100 POT C;
-#X text 826 100 POT D;
-#X text 569 592 CV OUT 1;
-#X text 703 592 CV OUT 2;
-#X text 119 100 AUDIO INPUT;
-#X text 117 592 AUDIO OUTPUT;
-#X text 1094 592 GATE OUT;
-#X text 999 100 BUT 1;
-#X text 1177 100 BUT 2;
-#X obj 1054 562 s GATE_OUT @owl Push;
-#X obj 671 562 s CV_OUT_2 @owl G;
-#X obj 518 562 s CV_OUT_1 @owl F;
-#X obj 275 128 r Pot_A @owl A;
-#X obj 449 128 r Pot_B @owl B;
-#X obj 798 128 r Pot_D @owl D;
-#X obj 962 128 r Button_1 @owl B1;
-#X obj 1139 128 r Button_2 @owl B2;
-#X obj 624 128 r Pot_C @owl C;
-#X obj 1236 561 s BUTTON_A @owl B1;
-#X text 1252 589 BUTTON A LED;
-#X obj 1360 561 s BUTTON_B @owl B2;
-#X text 1376 589 BUTTON B LED;
+#N canvas 220 98 1920 1274 12;
+#X obj 339 -1476 tgl 23 0 empty empty empty 17 7 0 10 -203904 -1 -1
+0 1;
+#X obj 340 -1438 s GATE_OUT @owl Push;
+#X obj 190 -1285 s metrobang;
+#X obj -42 -1228 timer;
+#X obj -42 -1258 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -10 -1258 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -42 -1291 sel 0 1;
+#X obj -42 -1380 f;
+#X obj -45 -1421 bng 23 250 50 0 empty empty empty 17 7 0 10 -232576
+-1 -1;
+#X obj -42 -1352 + 1;
+#X obj -42 -1324 mod 2;
+#X text -1 -1417 taptempo;
+#X msg 16 -1364 0;
+#X obj 190 -1560 bng 23 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 103 -1614 r Button_1 @owl B1;
+#X obj 72 -1180 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8
+0 10 -262144 -1 -1 0 256;
+#X obj -42 -1200 min 3333;
+#X obj 190 -1367 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 205 -1344 to use this button as the main clock of your algorythm
+you can use this bang as the main metronome [in this case metro bang]
+;
+#X text 275 -1614 incoming from Left button and GATE1 (CV Input 1)
+are doing the same \, therefore to avoid clock conflicts is much more
+efficient to use this button as the main clock of your algorythm;
+#X text 72 -1227 this piece of code calculates the taptempo in your
+patch from the incoming CV from GATE1 (CV input 1);
+#X text 391 -1486 This toggle activates the led in the GATE.OUT portso
+you can visualize the clock in it.;
+#X obj 72 -1158 s time;
+#X text 189 -527 ///////////////////////////////////////////;
+#X text 347 -1407 GATE OUT LED Rate;
+#X text 61 -1024 Knob A;
+#X obj 7 -967 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 4 -1000 r Pot_A @owl A;
+#X obj 4 -851 s valueknobA;
+#X obj 4 -937 * 1;
+#X obj 7 -895 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 196 -1031 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 196 -959 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 195 -1067 r Pot_B @owl B;
+#X obj 193 -915 s valueknobB;
+#X obj 386 -1053 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 383 -1023 * 1;
+#X obj 386 -981 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 575 -1117 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 572 -1087 * 1;
+#X obj 575 -1045 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 383 -1086 r Pot_C @owl C;
+#X obj 383 -937 s valueknobC;
+#X obj 572 -1001 s valueknobD;
+#X obj 572 -1150 r Pot_D @owl D;
+#X obj 12 -707 adc~ 1;
+#X obj 179 -709 adc~ 2;
+#X text -10 -733 IN_L LICH PORT;
+#X text 153 -735 IN_R LICH PORT;
+#X obj 15 -621 dac~ 1;
+#X obj 178 -629 dac~ 2;
+#X text -16 -592 out_L LICH PORT;
+#X text 155 -593 out_R LICH PORT;
+#X obj 387 -725 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 593 -702 s CV_OUT_2 @owl G;
+#X obj 596 -726 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 385 -701 s CV_OUT_1 @owl F;
+#X text 366 -486 BEFACO & REBELTECH;
+#X text 296 -503 BEFACO.LICH.DEFAULT.TEMPLATE;
+#X text 629 -1174 Knob D;
+#X text 440 -1110 Knob C;
+#X text 250 -1088 Knob B;
+#X obj 193 -1001 * 1;
+#X text 44 -946 from 0 to 1;
+#X text 232 -1001 from 0 to 1;
+#X text 433 -1032 from 0 to 1;
+#X text 625 -1096 from 0 to 1;
+#X text 427 -751 from 0 to 1;
+#X text 650 -753 from 0 to 1;
+#X obj 857 -1348 bng 42 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 857 -1521 bng 23 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 846 -1553 r Button_2 @owl B2;
+#X obj 857 -1484 f;
+#X obj 857 -1456 + 1;
+#X obj 857 -1428 mod 2;
+#X obj 857 -1401 sel 0;
+#X text 924 -1463 corrector;
+#X text 914 -1346 any time you click on LICHs right button it will
+trig this bang;
+#X text 324 -468 PATCH BY XAVI MANZANARES;
+#X connect 0 0 1 0;
+#X connect 3 0 16 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 9 0 7 1;
+#X connect 10 0 6 0;
+#X connect 12 0 7 1;
+#X connect 13 0 0 0;
+#X connect 13 0 17 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X connect 15 0 22 0;
+#X connect 16 0 15 0;
+#X connect 17 0 2 0;
+#X connect 26 0 29 0;
+#X connect 27 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 28 0;
+#X connect 31 0 62 0;
+#X connect 32 0 34 0;
+#X connect 33 0 31 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 42 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 43 0;
+#X connect 41 0 35 0;
+#X connect 44 0 38 0;
+#X connect 53 0 56 0;
+#X connect 55 0 54 0;
+#X connect 62 0 32 0;
+#X connect 70 0 72 0;
+#X connect 71 0 70 0;
+#X connect 72 0 73 0;
+#X connect 73 0 72 1;
+#X connect 73 0 74 0;
+#X connect 74 0 75 0;
+#X connect 75 0 69 0;
