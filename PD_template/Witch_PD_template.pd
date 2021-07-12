@@ -126,16 +126,16 @@ you can visualize the clock in it.;
 #X obj 864 501 r Pot_E @owl E;
 #X text 421 1187 BEFACO.WICH.DEFAULT.TEMPLATE;
 #X obj 864 650 s valueknobE;
-#X text 109 1098 out_L WICH PORT;
-#X text 280 1097 out_R WICH PORT;
 #X text 400 76 incoming from first buttonand Gate 1 are doing the same
 \, therefore to avoid clock conflicts is much more efficient to use
 this button as the main clock of your algorythm;
-#X text 1279 350 any time you click on WICHs second button it will
+#X text 109 1098 out_L WITCH PORT;
+#X text 280 1097 out_R WITCH PORT;
+#X text 1279 350 any time you click on WITCHs second button it will
 trig this bang;
-#X text 1275 636 any time you click on WICHs third button it will trig
-this bang;
-#X text 1276 927 any time you click on WICHs fourth button it will
+#X text 1275 635 any time you click on WITCHs third button it will
+trig this bang;
+#X text 1277 927 any time you click on WITCHs fourth button it will
 trig this bang;
 #X connect 0 0 1 0;
 #X connect 3 0 16 0;
