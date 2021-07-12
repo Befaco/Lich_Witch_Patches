@@ -1,0 +1,201 @@
+#N canvas 193 85 1920 1274 12;
+#X obj 464 214 tgl 23 0 empty empty empty 17 7 0 10 -203904 -1 -1 0
+1;
+#X obj 465 252 s GATE_OUT @owl Push;
+#X obj 315 405 s metrobang;
+#X obj 83 462 timer;
+#X obj 83 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 115 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 83 399 sel 0 1;
+#X obj 83 310 f;
+#X obj 80 269 bng 23 250 50 0 empty empty empty 17 7 0 10 -232576 -1
+-1;
+#X obj 83 338 + 1;
+#X obj 83 366 mod 2;
+#X text 124 273 taptempo;
+#X msg 141 326 0;
+#X obj 315 130 bng 23 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 228 76 r Button_1 @owl B1;
+#X obj 197 510 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
+#X obj 83 490 min 3333;
+#X obj 315 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 330 346 to use this button as the main clock of your algorythm
+you can use this bang as the main metronome [in this case metro bang]
+;
+#X text 197 463 this piece of code calculates the taptempo in your
+patch from the incoming CV from GATE1 (CV input 1);
+#X text 516 204 This toggle activates the led in the GATE.OUT portso
+you can visualize the clock in it.;
+#X obj 197 532 s time;
+#X text 314 1163 ///////////////////////////////////////////;
+#X text 472 283 GATE OUT LED Rate;
+#X text 186 666 Knob A;
+#X obj 132 723 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 129 690 r Pot_A @owl A;
+#X obj 129 839 s valueknobA;
+#X obj 129 753 * 1;
+#X obj 132 795 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 321 659 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 321 731 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 320 623 r Pot_B @owl B;
+#X obj 318 775 s valueknobB;
+#X obj 511 637 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 508 667 * 1;
+#X obj 511 709 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 700 573 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 697 603 * 1;
+#X obj 700 645 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 508 604 r Pot_C @owl C;
+#X obj 508 753 s valueknobC;
+#X obj 697 689 s valueknobD;
+#X obj 697 540 r Pot_D @owl D;
+#X obj 137 983 adc~ 1;
+#X obj 304 981 adc~ 2;
+#X obj 140 1069 dac~ 1;
+#X obj 303 1061 dac~ 2;
+#X obj 512 965 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 718 988 s CV_OUT_2 @owl G;
+#X obj 721 964 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 510 989 s CV_OUT_1 @owl F;
+#X text 491 1204 BEFACO & REBELTECH;
+#X text 754 516 Knob D;
+#X text 565 580 Knob C;
+#X text 375 602 Knob B;
+#X obj 318 689 * 1;
+#X text 169 744 from 0 to 1;
+#X text 357 689 from 0 to 1;
+#X text 558 658 from 0 to 1;
+#X text 750 594 from 0 to 1;
+#X text 552 939 from 0 to 1;
+#X text 775 937 from 0 to 1;
+#X obj 1222 348 bng 42 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 1222 175 bng 23 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 1211 143 r Button_2 @owl B2;
+#X obj 1222 212 f;
+#X obj 1222 240 + 1;
+#X obj 1222 268 mod 2;
+#X obj 1222 295 sel 0;
+#X text 1289 233 corrector;
+#X text 449 1222 PATCH BY XAVI MANZANARES;
+#X obj 1217 635 bng 42 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 1217 462 bng 23 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 1217 499 f;
+#X obj 1217 527 + 1;
+#X obj 1217 555 mod 2;
+#X obj 1217 582 sel 0;
+#X text 1284 520 corrector;
+#X obj 1219 925 bng 42 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 1219 752 bng 23 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj 1219 789 f;
+#X obj 1219 817 + 1;
+#X obj 1219 845 mod 2;
+#X obj 1219 872 sel 0;
+#X text 1286 810 corrector;
+#X obj 1206 430 r Button_3 @owl B3;
+#X obj 1208 720 r Button_4 @owl B4;
+#X text 115 957 IN_L WITCH PORT;
+#X text 278 955 IN_R WICH PORT;
+#X obj 867 534 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X obj 864 564 * 1;
+#X obj 867 606 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -203904
+-1 -1 0 1;
+#X text 917 555 from 0 to 1;
+#X text 921 477 Knob E;
+#X obj 864 501 r Pot_E @owl E;
+#X text 421 1187 BEFACO.WICH.DEFAULT.TEMPLATE;
+#X obj 864 650 s valueknobE;
+#X text 109 1098 out_L WICH PORT;
+#X text 280 1097 out_R WICH PORT;
+#X text 400 76 incoming from first buttonand Gate 1 are doing the same
+\, therefore to avoid clock conflicts is much more efficient to use
+this button as the main clock of your algorythm;
+#X text 1279 350 any time you click on WICHs second button it will
+trig this bang;
+#X text 1275 636 any time you click on WICHs third button it will trig
+this bang;
+#X text 1276 927 any time you click on WICHs fourth button it will
+trig this bang;
+#X connect 0 0 1 0;
+#X connect 3 0 16 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 9 0 7 1;
+#X connect 10 0 6 0;
+#X connect 12 0 7 1;
+#X connect 13 0 0 0;
+#X connect 13 0 17 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X connect 15 0 21 0;
+#X connect 16 0 15 0;
+#X connect 17 0 2 0;
+#X connect 25 0 28 0;
+#X connect 26 0 25 0;
+#X connect 28 0 29 0;
+#X connect 29 0 27 0;
+#X connect 30 0 56 0;
+#X connect 31 0 33 0;
+#X connect 32 0 30 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 41 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 42 0;
+#X connect 40 0 34 0;
+#X connect 43 0 37 0;
+#X connect 48 0 51 0;
+#X connect 50 0 49 0;
+#X connect 56 0 31 0;
+#X connect 64 0 66 0;
+#X connect 65 0 64 0;
+#X connect 66 0 67 0;
+#X connect 67 0 66 1;
+#X connect 67 0 68 0;
+#X connect 68 0 69 0;
+#X connect 69 0 63 0;
+#X connect 73 0 74 0;
+#X connect 74 0 75 0;
+#X connect 75 0 74 1;
+#X connect 75 0 76 0;
+#X connect 76 0 77 0;
+#X connect 77 0 72 0;
+#X connect 80 0 81 0;
+#X connect 81 0 82 0;
+#X connect 82 0 81 1;
+#X connect 82 0 83 0;
+#X connect 83 0 84 0;
+#X connect 84 0 79 0;
+#X connect 86 0 73 0;
+#X connect 87 0 80 0;
+#X connect 90 0 91 0;
+#X connect 91 0 92 0;
+#X connect 92 0 97 0;
+#X connect 95 0 90 0;
